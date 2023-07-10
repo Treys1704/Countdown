@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import { fireEvent, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/dom'
 import React from "react"
-import Countdown from "./Countdown";
+import Countdown from "../Countdown";
 import { format } from "date-fns"
 
 describe('Countdown component', () => {
@@ -42,28 +42,6 @@ describe('Countdown component', () => {
             expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
         });
     });
-
-    // test for show elapsed time on the screen if the target date is passed
-    // it('should show elapsed time on the screen if the target date is passed', async () => {
-    //     const targetDate = new Date('2021-01-01T00:00:00'); // Set a past date
-    //     jest.spyOn(global.Date, 'now').mockImplementation(() => targetDate.getTime());
-    //     render(<Countdown />);
-    //     const editButton = screen.getByText(/Editer la date/i);
-    //     fireEvent.click(editButton);
-    //     const datePickerInput = screen.getByLabelText(/Nouvelle Date/i);
-
-    //     const elapsedTime = screen.getByText(/Temps écoulé/i);
-    //     if (targetDate < datePickerInput.value) {
-    //         await waitFor(() => {
-    //             expect(elapsedTime).toBeInTheDocument();
-    //             expect(elapsedTime).toHaveTextContent(/Temps écoulé/i);
-    //         });
-            
-    //     }
-
-    //     global.Date.now.mockRestore();
-    //     expect(elapsedTime).not.toBeInTheDocument();
-    // })
 
     // it('should talk that the date has passed', () => {
     //     render(<Countdown />);
