@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: npm install --legacy-peer-deps
+- script: npm install
   displayName: 'Install dependencies'
 
 - script: npm run build
